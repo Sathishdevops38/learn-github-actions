@@ -1,12 +1,12 @@
 name: second workflow
 on:
-  push:
+  #push:
   workflow_dispatch:
   pull_request:
     branches:
       - main
-  schedule:
-    - cron: '0/1 0 * * *'      
+  # schedule:
+  #   - cron: '0/1 0 * * *'      
 jobs:
   echo:
     runs-on: ubuntu-latest

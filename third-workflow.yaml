@@ -1,0 +1,29 @@
+name: dispaly os names
+on:
+  push:
+    branches:
+      main
+  workflow_dispatch:
+jobs:
+  ubuntu-echo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print OS name
+        run: |
+          echo "OS: ${{ runner.os }}"
+          cat /etc/os-release
+  windows-echo:
+    runs-on: windows-latest
+    steps:
+      - name: Print OS name
+        shell: cmd
+        run: |
+          echo OS: ${{ runner.os }}
+          systeminfo | findstr /B /C:"OS Name" /C:"OS Version"
+  macos-echo:
+    runs-on: macos-latest
+    steps:
+      - name: Print OS name
+        run: |
+          echo "OS: ${{ runner.os }}"
+          sw_vers
