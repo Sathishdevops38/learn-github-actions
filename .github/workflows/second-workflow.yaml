@@ -5,8 +5,13 @@ on:
   pull_request:
     branches:
       - main
+<<<<<<< HEAD
   # schedule:
   #   - cron: '0/1 0 * * *'      
+=======
+  schedule:
+    - cron: '0/5 * * * *'      
+>>>>>>> c48dda37b48e37821bbf7d4d11bfa5dac396f1ee
 jobs:
   echo:
     runs-on: ubuntu-latest
