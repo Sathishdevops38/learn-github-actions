@@ -1,0 +1,20 @@
+name: second workflow
+on:
+  push:
+  workflow_dispatch:
+  pull_request:
+    branches:
+      - main
+  schedule:
+    - cron: '0 0 * * *'      
+jobs:
+  echo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Show Event Trigger
+        run: |
+          echo "Triggered by event name: ${{ github.event_name }}"
+          echo "Triggered by actor: ${{ github.actor }}"
+          echo "Ref/Branch: ${{ github.ref }}"
+
+
