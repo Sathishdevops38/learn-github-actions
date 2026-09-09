@@ -1,6 +1,6 @@
 name: node and npm versions
 on:
-  push:
+  # push:
   workflow_dispatch:
 jobs:
   build:
