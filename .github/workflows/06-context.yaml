@@ -1,0 +1,20 @@
+name: echo context of pipeline
+on: 
+  push:
+  workflow_dispatch:
+jobs:
+    echo-data:
+        runs-on: ubuntu-latest
+        steps:
+        - name: display information
+          run: |
+            echo "Event name: ${{ github.event_name }}"
+            echo "Ref: ${{ github.ref }}"
+            echo "SHA: ${{ github.sha }}"
+            echo "Actor: ${{ github.actor }}"
+            echo "workflow: $${{ github.workflow }}"
+            echo "run id: ${{ github.run_id }}"
+            echo "run number: ${{ github.run_number }}"
+        - name: Retrieve variable
+          run: |
+            echo "variable value: ${{ vars.MY_VAR}}"     
