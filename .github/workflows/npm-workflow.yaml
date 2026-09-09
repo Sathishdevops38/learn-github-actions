@@ -8,5 +8,9 @@ jobs:
     steps:
       - name: checkout code
         uses: actions/checkout@v6
-      - name: printing floders
-        run: ls -l
+      - name: setup node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24.x'
+      - name: install dependencies
+        run: npm ci
